@@ -5,14 +5,19 @@
     <title>Text-to-Speech</title>
 </head>
 <body>
-  <input id="text-input" type="text" placeholder="Enter your prompt...">
-  <button onclick="speakText()">Speak</button>
+  <input id="textToRead" type="text" placeholder="Enter your prompt...">
+  <button id="readButton">Speak</button>
   <script>
-    function speakText() {
-      const text = document.getElementById('text-input').value;
-      const voice = new SpeechSynthesisUtterance(text);
-      window.speechSynthesis.speak(voice);
-    }
+    const textToRead = document.getElementById('textToRead');
+    const readButton = document.getElementById('readButton');
+
+    readButton.addEventListener('click', () => {
+        const text = textToRead.value;
+        if (text.length > 0) {
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+    });
   </script>
 </body>
 </html>
