@@ -17,6 +17,10 @@
             const speech = new SpeechSynthesisUtterance(text);
             window.speechSynthesis.speak(speech);
         }
+        else{
+            const speech = new SpeechSynthesisUtterance("Enter the word...");
+            window.speechSynthesis.speak(speech);
+        }
     });
   </script>
 </body>
